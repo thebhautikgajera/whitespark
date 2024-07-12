@@ -17,6 +17,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Hide scrollbar for Chrome, Safari and Opera */
         *::-webkit-scrollbar {
@@ -29,6 +32,122 @@
             /* IE and Edge */
             scrollbar-width: none;
             /* Firefox */
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+
+        .mySlides {
+            display: none
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            /* max-width: 1000px; */
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 2vw;
+            width: 2vw;
+            margin: 0 2px;
+            background-color: #dbe7ff;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color:#4c89ff;
+        }
+
+        /* Fading animation
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        } */
+
+        /* @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        } */
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
         }
     </style>
     <script>
@@ -51,23 +170,37 @@
 <body class="h-full w-full">
     <main class=" relative h-full w-full">
         <nav
-            class="flex bg-white justify-between items-center text-[1.2vw] border-b-8 border-blue-500 px-[3vw] py-[1vw] font-['Archivo',_sans-serif]">
+            class="flex bg-[#060532] justify-between items-center text-[1.2vw] border-b-8 border-[#060532] px-[3vw] py-[1vw] font-['Archivo',_sans-serif]">
             <div class="">
                 <a href="#" target="_blank" rel="noopener noreferrer">
-                    <img src="https://durvasainfotech.com/wp-content/uploads/2023/02/cropped-Di-logo-f-png-05-1.png"
-                    class="h-auto w-[10vw]" alt="">
+                    <img src="/cdn/logo.png" class="h-auto w-[10vw]" alt="">
                 </a>
             </div>
             <div class="flex justify-between gap-[7vw]">
-                <a href="#"><h3 class="hover:ease-in-out duration-300 hover:text-blue-700">Local SEO Software <span><i class="ri-arrow-down-s-line"></i></span></h3></a>
-                <a href="#"><h3 class="hover:ease-in-out duration-300 hover:text-blue-700">Listing & SEO Services<span><i class="ri-arrow-down-s-line"></i></span></h3></a>
-                <a href="#"><h3 class="hover:ease-in-out duration-300 hover:text-blue-700">Resources<span><i class="ri-arrow-down-s-line"></i></span></h3></a>
+                <a href="#">
+                    <h3 class="hover:ease-in-out text-[#ffffff] duration-300 hover:text-blue-700">Local SEO Software
+                        <span><i class="ri-arrow-down-s-line"></i></span>
+                    </h3>
+                </a>
+                <a href="#">
+                    <h3 class="hover:ease-in-out duration-300 text-[#ffffff] hover:text-blue-700">Listing & SEO
+                        Services<span><i class="ri-arrow-down-s-line"></i></span></h3>
+                </a>
+                <a href="#">
+                    <h3 class="hover:ease-in-out duration-300 text-[#ffffff] hover:text-blue-700">Resources<span><i
+                                class="ri-arrow-down-s-line"></i></span></h3>
+                </a>
             </div>
             <div class="flex justify-between gap-[2vw]">
-                <a href="#"><h3 class="px-[1vw] py-[.5vw] hover:ease-in-out duration-300 hover:text-blue-700">Sign In</h3></a>
-                <a href="#"><h3
-                    class="px-[1vw] py-[.5vw] rounded-[.5vw] border border-[#000000] hover:ease-in-out duration-300 hover:border hover:border-blue-500 hover:bg-blue-500 hover:text-white">
-                    Book a call</h3></a>
+                <a href="#">
+                    <h3 class="px-[1vw] py-[.5vw] hover:ease-in-out duration-300 text-[#ffffff] hover:text-blue-700">
+                        Sign In</h3>
+                </a>
+                <a href="#">
+                    <h3
+                        class="px-[1vw] py-[.5vw] rounded-[.5vw] border text-[#ffffff] border-[#ffffff] hover:ease-in-out duration-300 hover:border hover:border-blue-500 hover:bg-blue-500 hover:text-white">
+                        Book a call</h3>
+                </a>
             </div>
         </nav>
 
@@ -86,13 +219,15 @@
                     experts.</p>
                 <h2 class="text-gray-400 mt-[1vw] text-[1.5vw] font-['Roboto',_sans-serif] font-semibold">Plans starting
                     at $499 per month</h2>
-                <a href="#" target="_blank" rel="noopener noreferrer"><h3
-                    class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
-                    See plans & pricing</h3></a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <h3
+                        class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
+                        See plans & pricing</h3>
+                </a>
             </div>
             <img src="/cdn/page-1Img.png" class="h-auto w-[50vw]" alt="">
         </section>
-        
+
         <section class="bg-[#060532] h-full w-full flex items-center gap-[5vw]">
             <div class="flex items-center">
                 <div class="grid grid-cols-2 gap-[1vw] ml-[13vw] mt-[3vw]">
@@ -132,76 +267,565 @@
                 <h2 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.3vw] mt-[1.5vw]">We optimize and manage
                     your Google Business Profile and your <br> website so you show up and stand out to local searchers,
                     get <br> more leads, and win new customers.</h2>
-                    <a href="#" target="_blank" rel="noopener noreferrer"><h3
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <h3
                         class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
-                        See plans & pricing</h3></a>
+                        See plans & pricing</h3>
+                </a>
             </div>
         </section>
-        
+
         <section class="bg-[#060532] h-full w-full flex items-center gap-[5vw]">
             <div class="ml-[13vw] mt-[3vw] text-white">
-                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] font-extrabold">GOOGLE BUSINESS PROFILE MANAGEMENT</h3>
-                <h2 class="font-['Archivo',_sans-serif] text-[3.3vw] font-semibold">Stand out in the <br> local pack</h2>
-                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw]">Local SEO starts with a fully optimized and managed Google <br> Business Profile (formerly known as Google My Business). We <br> understand Google’s local algorithm and study which features of <br> your Google Business Profile can influence your rankings and <br> conversions.</h3>
-                <h2 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] mt-[1.5vw]">
-                    Your dedicated account manager will work with you to <br> understand your business goals and create a local SEO strategy <br> that’s right for you. We will optimize your Profile with accurate <br>information, publish fresh weekly Google Posts, feature your <br> products and services, develop a review strategy, keep tabs on <br> your competitors, and send you a monthly report.
+                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] font-extrabold">GOOGLE BUSINESS
+                    PROFILE MANAGEMENT</h3>
+                <h2 class="font-['Archivo',_sans-serif] text-[3.3vw] font-semibold">Stand out in the <br> local pack
                 </h2>
-                <a href="#" target="_blank" rel="noopener noreferrer"><h3
-                    class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
-                    See plans & pricing</h3></a>
+                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw]">Local SEO starts with a fully
+                    optimized and managed Google <br> Business Profile (formerly known as Google My Business). We <br>
+                    understand Google’s local algorithm and study which features of <br> your Google Business Profile
+                    can influence your rankings and <br> conversions.</h3>
+                <h2 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] mt-[1.5vw]">
+                    Your dedicated account manager will work with you to <br> understand your business goals and create
+                    a local SEO strategy <br> that’s right for you. We will optimize your Profile with accurate
+                    <br>information, publish fresh weekly Google Posts, feature your <br> products and services, develop
+                    a review strategy, keep tabs on <br> your competitors, and send you a monthly report.
+                </h2>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <h3
+                        class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
+                        See plans & pricing</h3>
+                </a>
             </div>
             <img src="/cdn/page-3Img.png" class="h-auto w-[50vw]" alt="">
         </section>
-        
+
         <section class="bg-[#060532] h-full w-full flex items-center gap-[3vw]">
             <img src="/cdn/page-4Img.png" class="h-auto w-[50vw] mt-[3vw] ml-[3vw]" alt="">
             <div class="mr-[13vw] text-white">
-                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] font-extrabold">REVIEW STRATEGY & MANAGEMENT</h3>
+                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] font-extrabold">REVIEW STRATEGY &
+                    MANAGEMENT</h3>
                 <h2 class="font-['Archivo',_sans-serif] text-[3.3vw] font-semibold">Get more reviews</h2>
-                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw]">Reviews are critical to increasing both rankings and <br> conversions. Your dedicated account manager will work with <br> you to learn about your business and develop a review strategy <br> that works for you.</h3>
+                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw]">Reviews are critical to increasing
+                    both rankings and <br> conversions. Your dedicated account manager will work with <br> you to learn
+                    about your business and develop a review strategy <br> that works for you.</h3>
                 <h2 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] mt-[1.5vw]">
-                    Our strategies work. Whitespark clients experience a 567% <br> increase in reviews on average! We’ll make sure you have a <br> strategy and the materials you need to ask every customer for a <br> review. We also respond to all reviews for you and can help you <br> manage any negative reviews.
+                    Our strategies work. Whitespark clients experience a 567% <br> increase in reviews on average! We’ll
+                    make sure you have a <br> strategy and the materials you need to ask every customer for a <br>
+                    review. We also respond to all reviews for you and can help you <br> manage any negative reviews.
                 </h2>
-                <a href="#" target="_blank" rel="noopener noreferrer"><h3
-                    class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
-                    See plans & pricing</h3></a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <h3
+                        class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
+                        See plans & pricing</h3>
+                </a>
             </div>
         </section>
-        
+
         <section class="bg-[#060532] h-full w-full flex items-center gap-[2vw]">
             <div class="ml-[13vw] mt-[3vw] text-white">
-                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] font-extrabold">WEBSITE OPTIMIZATION</h3>
-                <h2 class="font-['Archivo',_sans-serif] text-[3.1vw] font-semibold">Rank higher & convert <br> more leads</h2>
-                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw]">Every business is unique and so are our website optimization <br> strategies. We start with an audit of your website, analyzing <br> everything that affects your ability to rank on Google. You’ll get a <br> full report from our audit including every area of improvement <br> listed by priority, which then becomes our task list.</h3>
+                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] font-extrabold">WEBSITE OPTIMIZATION
+                </h3>
+                <h2 class="font-['Archivo',_sans-serif] text-[3.1vw] font-semibold">Rank higher & convert <br> more
+                    leads</h2>
+                <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw]">Every business is unique and so are
+                    our website optimization <br> strategies. We start with an audit of your website, analyzing <br>
+                    everything that affects your ability to rank on Google. You’ll get a <br> full report from our audit
+                    including every area of improvement <br> listed by priority, which then becomes our task list.</h3>
                 <h2 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] mt-[1.5vw]">
-                    We’ll optimize your website, starting with the top priorities to <br> increase your online conversions and working through our full list <br> of recommendations. Our custom strategies will get you results: <br> increased engagement, traffic, conversions, and sales.
+                    We’ll optimize your website, starting with the top priorities to <br> increase your online
+                    conversions and working through our full list <br> of recommendations. Our custom strategies will
+                    get you results: <br> increased engagement, traffic, conversions, and sales.
                 </h2>
-                <a href="#" target="_blank" rel="noopener noreferrer"><h3
-                    class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
-                    See plans & pricing</h3></a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <h3
+                        class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
+                        See plans & pricing</h3>
+                </a>
             </div>
             <img src="/cdn/page-5Img.png" class="h-auto w-[50vw]" alt="">
         </section>
-        
+
         <section class="bg-[#060532] h-full w-full flex items-center gap-[3vw]">
             <img src="/cdn/page-6Img.png" class="h-auto w-[50vw] mt-[3vw] ml-[3vw]" alt="">
             <div class="mr-[13vw] text-white">
                 <h3 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] font-extrabold">
                     LINK BUILDING</h3>
-                <h2 class="font-['Archivo',_sans-serif] text-[3.1vw] font-semibold">Boost rankings <span class="italic">faster</span></h2>
-                <h6 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.07vw]">Link building is a slow and difficult process for many businesses, <br> yet the quality and authority of inbound links to a website domain <br> is the #1 local organic ranking factor. Our link building service <br> can improve your business’s visibility on Google search by <br> increasing prominence – a pillar of Google’s local algorithm.</h6>
+                <h2 class="font-['Archivo',_sans-serif] text-[3.1vw] font-semibold">Boost rankings <span
+                        class="italic">faster</span></h2>
+                <h6 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.07vw]">Link building is a slow and
+                    difficult process for many businesses, <br> yet the quality and authority of inbound links to a
+                    website domain <br> is the #1 local organic ranking factor. Our link building service <br> can
+                    improve your business’s visibility on Google search by <br> increasing prominence – a pillar of
+                    Google’s local algorithm.</h6>
                 <h6 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.09vw] mt-[1.5vw]">
-                    We create in-content editorial backlinks in fresh posts on blogs <br> that have real organic traffic. We write relevant and high quality <br> content that mentions your business, then we pitch that content <br> to blogs related to your business category. Every month, we’ll <br> send you the link to a new post that mentions your business and <b></b> links to your website.
+                    We create in-content editorial backlinks in fresh posts on blogs <br> that have real organic
+                    traffic. We write relevant and high quality <br> content that mentions your business, then we pitch
+                    that content <br> to blogs related to your business category. Every month, we’ll <br> send you the
+                    link to a new post that mentions your business and <b></b> links to your website.
                 </h6>
                 <h6 class="font-['Roboto',_sans-serif] text-[#adb2c7] text-[1.1vw] italic mt-[1.5vw]">
-                    *Link pricing may vary for certain industries. Your account manager will review pricing with you before billing.
+                    *Link pricing may vary for certain industries. Your account manager will review pricing with you
+                    before billing.
                 </h6>
-                <a href="#" target="_blank" rel="noopener noreferrer"><h3
-                    class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
-                    See plans & pricing</h3></a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <h3
+                        class="px-[1.5vw] inline-block mt-[1.2vw] py-[1vw] rounded-[.5vw] text-semibold text-[1.4vw] text-white font-['Roboto',_sans-serif] font-semibold bg-[#0886fb] hover:ease-in-out duration-300 hover:border-blue-500 hover:bg-blue-800 hover:text-white">
+                        See plans & pricing</h3>
+                </a>
+            </div>
+        </section>
+
+        <section class="p-[0_10vw] h-2/3 w-full bg-[#060532] pt-[12vw]">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+
+                    <div class="flex bg-[#f5eae6] rounded-[2vw] ">
+                        <div class="">
+                            <img src="cdn/testimonial-1-desktop.webp" alt="" class="rounded-[2vw_0_0_2vw] h-full">
+                        </div>
+
+                        <div class="p-[2.4vw]">
+                            <div class="flex gap-[2vw]">
+                                <div
+                                    class="bg-white p-[1vw_0_0.5vw_1vw] w-[15vw] rounded-[1vh] font-['Roboto',_sans-serif]">
+                                    <p class="text-[1.3vw] font-[600] ">Ranking visibility</p>
+                                    <p class="text-[2.5vw] font-[800]"><span class=""><i
+                                                class="ri-arrow-up-line text-[#00c058]"></i></span>30%</p>
+                                </div>
+                                <div
+                                    class="bg-white p-[1vw_0_0.5vw_1vw] w-[15vw] rounded-[1vh] font-['Roboto',_sans-serif]">
+                                    <p class="text-[1.3vw] font-[600] ">Ad spend</p>
+                                    <p class="text-[2.5vw] font-[800]"><span class=""><i
+                                                class="ri-arrow-up-line text-[#00c058]"></i></span>75%</p>
+                                </div>
+                                <div
+                                    class="bg-white p-[1vw_0_0.5vw_1vw] w-[15vw] rounded-[1vh] font-['Roboto',_sans-serif]">
+                                    <p class="text-[1.3vw] font-[600]">Discovery searches</p>
+                                    <p class="text-[2.5vw] font-[800] "><span class=""><i
+                                                class="ri-arrow-up-line text-[#00c058]"></i></span>166%</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <p
+                                    class="text-[1.4vw] text-neutral-900 font-[400] mt-[2vw] font-['Roboto',_sans-serif]">
+                                    “What I
+                                    like most about the service that you provide is the individuality that </br>comes
+                                    with it
+                                    and not being treated like just another number.</p>
+                                <p
+                                    class="text-[1.4vw] text-neutral-900 font-[400] mt-[2vw] font-['Roboto',_sans-serif]">
+                                    Before,
+                                    I was spending a couple thousand dollars a month and it was just </br> money out the
+                                    window.
+                                    Then once I started working with you guys I found </br> my ranking increased
+                                    considerably.”
+                                </p>
+                                <p class="text-[1.5vw] text-black font-['Roboto',_sans-serif] font-[700] mt-[2vw]">Paul
+                                    McIntyre
+                                </p>
+                                <p class="text-[1.4vw] text-neutral-900 font-[400] font-['Roboto',_sans-serif]">Owner,
+                                    <span
+                                        class="text-[1.4vw] text-[#fd015e] hover:text-[#4687f6] font-[400] mt-[2vw]">Broadmead
+                                        Orthopaedic Physiotherapy Clinic</span></p>
+                                <p class="text-[1.4vw] text-black font-[600] mt-[1vw] font-['Roboto',_sans-serif]">
+                                    BROADMEAD
+                                    USES</p>
+                            </div>
+                            <div class="mt-[.5vw]">
+                                <ul class="flex gap-[1vw]">
+                                    <li
+                                        class="bg-white p-[0.2vw] text-[1vw] font-['Archivo',_sans-serif] font-[600] rounded-[1vh]">
+                                        <i class="ri-circle-fill text-[0.9vw] text-[#fd015e] "></i> SEO Services
+                                    </li>
+                                    <li
+                                        class="bg-white p-[0.2vw] font-['Archivo',_sans-serif] text-[1vw] font-[600] rounded-[1vh]">
+                                        <i class="ri-circle-fill text-[0.9vw] text-[#fd015e]"></i> Listings Service
+                                    </li>
+                                    <li
+                                        class="bg-white p-[0.2vw] font-['Archivo',_sans-serif] text-[1vw] font-[600] rounded-[1vh]">
+                                        <i class="ri-circle-fill text-[0.9vw] text-[#fd015e]"></i> Local Rank Tracker
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mySlides fade">
+
+                    <div class="flex bg-[#f5eae6] rounded-[2vw] ">
+                        <div class="">
+                            <img src="cdn/testimonial-2-desktop.webp" alt="" class="rounded-[2vw_0_0_2vw] h-full">
+                        </div>
+
+                        <div class="p-[2.4vw]">
+                            <div class="flex gap-[2vw]">
+                                <div
+                                    class="bg-white p-[1vw_0_0.5vw_1vw] w-[15vw] rounded-[1vh] font-['Roboto',_sans-serif]">
+                                    <p class="text-[1.3vw] font-[600] ">Ranking visibility</p>
+                                    <p class="text-[2.5vw] font-[800]"><span class=""><i
+                                                class="ri-arrow-up-line text-[#00c058]"></i></span>30%</p>
+                                </div>
+                                <div
+                                    class="bg-white p-[1vw_0_0.5vw_1vw] w-[15vw] rounded-[1vh] font-['Roboto',_sans-serif]">
+                                    <p class="text-[1.3vw] font-[600] ">Ad spend</p>
+                                    <p class="text-[2.5vw] font-[800]"><span class=""><i
+                                                class="ri-arrow-up-line text-[#00c058]"></i></span>75%</p>
+                                </div>
+                                <div
+                                    class="bg-white p-[1vw_0_0.5vw_1vw] w-[15vw] rounded-[1vh] font-['Roboto',_sans-serif]">
+                                    <p class="text-[1.3vw] font-[600]">Discovery searches</p>
+                                    <p class="text-[2.5vw] font-[800] "><span class=""><i
+                                                class="ri-arrow-up-line text-[#00c058]"></i></span>166%</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <p
+                                    class="text-[1.4vw] text-neutral-900 font-[400] mt-[2vw] font-['Roboto',_sans-serif]">
+                                    “What I
+                                    like most about the service that you provide is the individuality that </br>comes
+                                    with it
+                                    and not being treated like just another number.</p>
+                                <p
+                                    class="text-[1.4vw] text-neutral-900 font-[400] mt-[2vw] font-['Roboto',_sans-serif]">
+                                    Before,
+                                    I was spending a couple thousand dollars a month and it was just </br> money out the
+                                    window.
+                                    Then once I started working with you guys I found </br> my ranking increased
+                                    considerably.”
+                                </p>
+                                <p class="text-[1.5vw] text-black font-['Roboto',_sans-serif] font-[700] mt-[2vw]">Paul
+                                    McIntyre
+                                </p>
+                                <p class="text-[1.4vw] text-neutral-900 font-[400] font-['Roboto',_sans-serif]">Owner,
+                                    <span
+                                        class="text-[1.4vw] text-[#fd015e] hover:text-[#4687f6] font-[400] mt-[2vw]">Broadmead
+                                        Orthopaedic Physiotherapy Clinic</span></p>
+                                <p class="text-[1.4vw] text-black font-[600] mt-[1vw] font-['Roboto',_sans-serif]">
+                                    BROADMEAD
+                                    USES</p>
+                            </div>
+                            <div class="mt-[.5vw]">
+                                <ul class="flex gap-[1vw]">
+                                    <li
+                                        class="bg-white p-[0.2vw] text-[1vw] font-['Archivo',_sans-serif] font-[600] rounded-[1vh]">
+                                        <i class="ri-circle-fill text-[0.9vw] text-[#fd015e] "></i> SEO Services
+                                    </li>
+                                    <li
+                                        class="bg-white p-[0.2vw] font-['Archivo',_sans-serif] text-[1vw] font-[600] rounded-[1vh]">
+                                        <i class="ri-circle-fill text-[0.9vw] text-[#fd015e]"></i> Listings Service
+                                    </li>
+                                    <li
+                                        class="bg-white p-[0.2vw] font-['Archivo',_sans-serif] text-[1vw] font-[600] rounded-[1vh]">
+                                        <i class="ri-circle-fill text-[0.9vw] text-[#fd015e]"></i> Local Rank Tracker
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+
+            <div style="text-align:center; margin-top: 1vw">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+            <!-- <div class="text-center mt-[1vw]">
+                <i class="ri-circle-fill text-[#4c89ff] text-[2vw] " ></i>
+                <i class="ri-circle-fill text-[#dbe7ff] text-[2vw] " onclick="currentSlide(2)"></i>
+            </div> -->
+        </section>
+
+        <section class="p-[4vw] mt-[35vw]">
+            <div class="">
+                <p class="text-[#3c81f6] font-[600] text-[1.3vw] font-['Roboto',_sans-serif]">With Whitespark’s experts
+                    on your side, you will save
+                    time, money, and frustration.</p>
+                <p class="font-['Archivo',_sans-serif] font-[600] text-[3vw] ">Meet your local SEO team</p>
+                <p class="text-[1.2vw] text-[#171717] font-[400] font-['Roboto',_sans-serif]">One size doesn’t fit all.
+                    Your dedicated account
+                    manager will custom tailor our </br>service for your needs and goals.</p>
+            </div>
+            <div class="">
+                <div class="grid grid-cols-6 grid-rows-3 gap-[2vw] mt-[2vw] font-['Roboto',_sans-serif]">
+                    <div>
+                        <img src="cdn/team5.png" alt="" class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Allie Margeson</p>
+                        <p class="font-[400]">Director of SEO & Fun Captain</p>
+                    </div>
+
+                    <div><img src="cdn/Tomas-Acuna.png" alt="" class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Tomas Acuna</p>
+                        <p class="font-[400]">Lead Strategist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Sydney-Marchuk.png" alt="" class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Sydney MacKay</p>
+                        <p class="font-[400]">SEO Strategist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Delon-Rajphangthong.png" alt=""
+                            class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Delon Raj</p>
+                        <p class="font-[400]">SEO Team Lead</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Qiannan-Zhang.png" alt="" class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Qiannan Zhang</p>
+                        <p class="font-[400]">SEO Strategist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Alicia-683x1024-1.jpg" alt=""
+                            class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Alicia Varty</p>
+                        <p class="font-[400]">Lead Strategist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/IMG_9783-768x1024-1.jpg" alt=""
+                            class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Eba Chikuni</p>
+                        <p class="font-[400]">Google Business Profile Strategist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Hava.png" alt="" class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Hava Hadzhiibryam</p>
+                        <p class="font-[400]">Google Business Profile </br> Specialist Team Lead</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Lora-Yordanova.png" alt="" class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Lora Yordanova</p>
+                        <p class="font-[400]">Google Business Profile Specialist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Deni-Petkova-768x1024-1.png" alt=""
+                            class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Deni Petkova</p>
+                        <p class="font-[400]">Google Business Profile Specialist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Kyle-Acuna-Candid.jpg" alt=""
+                            class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Kyle Acuna</p>
+                        <p class="font-[400]">Google Business Profile Strategist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/Britany-Tran-Candid.jpg" alt=""
+                            class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Britany Tran</p>
+                        <p class="font-[400]">Google Business Profile Strategist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/T02R30G88-U06E70F4XL6-d1567a7ccc17-512.jpeg" alt=""
+                            class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Yanita Mateva</p>
+                        <p class="font-[400]">Google Business Profile Specialist</p>
+                    </div>
+
+                    <div>
+                        <img src="cdn/2462456-scaled.jpg" alt="" class="rounded-[1vh] h-[20vw] w-[15vw] object-cover">
+                        <p class="font-[600] mt-[0.7vw]">Jahanne Rafio</p>
+                        <p class="font-[400]">SEO Strategist</p>
+
+                    </div>
+                </div>
+        </section>
+
+        <section class="p-[4vw] mt-[5vw]">
+            <div class="">
+                <p class="font-['Archivo',_sans-serif] font-[600] text-[3vw] ">What our clients are saying</p>
+            </div>
+            <div class="flex gap-[2vw] mt-[2vw] overflow-hidden">
+                <div class="border-[2px] rounded-[2vw] p-[2vw] w-[50vw]">
+                    <div class="flex gap-[1vw]">
+                        <img src="cdn/review-thumb1.jpg" alt="" class="border-[2px]">
+                        <p class="font-[600] text-[1.2vw] mt-[2.7vw]">Maria Brosch</p>
+                    </div>
+                    <div class="">
+                        <p class="font-[400] text-[1.2vw] mt-[1vw]">“I am very pleased with Whitespark’s Google My
+                            Business service. Our Google actions have seen a 25% surge in only 2 months since starting
+                            with them. They provide wonderful customer service, returning phone calls and emails
+                            promptly and are always very helpful explaining their process and results. I definitely
+                            would recommend giving them a try.”</p>
+                    </div>
+                </div>
+
+                <div class="border-[2px] rounded-[2vw] p-[2vw] w-[50vw]">
+                    <div class="flex gap-[2vw] ">
+                        <img src="cdn/de-Villars-Jones-logo-150x150-1.png" alt="" class="border-[2px]">
+                        <p class="font-[600] text-[1.2vw] mt-[2.7vw]">de Villars Jones LLP</p>
+                    </div>
+                    <div class="">
+                        <p class="font-[400] text-[1.2vw] mt-[1vw]">"What a great bunch of people to work with! We have
+                            been working with Whitespark Inc. since December 2018. In such a short period of time, they
+                            have increased the local online presence of de Villars Jones LLP –our local rankings have
+                            increased and more people are finding and interacting with us on Google. This is just what
+                            our business needed to get ahead of our competition. The people at Whitespark Inc. are
+                            friendly, knowledgeable, and VERY patient – such a pleasure to work with."</p>
+                    </div>
+                </div>
+
+                <!-- <div class="border-[2px] rounded-[2vw] p-[2vw] w-[50vw]">
+                    <div class="flex gap-[1vw]">
+                        <img src="cdn/review-thumb1.jpg" alt="" class="border-[2px]">
+                        <p class="font-[600] text-[1.2vw] mt-[2.7vw]">Maria Brosch</p>
+                    </div>
+                    <div class="">
+                        <p class="font-[400] text-[1.2vw] mt-[1vw]">“I am very pleased with Whitespark’s Google My
+                            Business service. Our Google actions have seen a 25% surge in only 2 months since starting
+                            with them. They provide wonderful customer service, returning phone calls and emails
+                            promptly and are always very helpful explaining their process and results. I definitely
+                            would recommend giving them a try.”</p>
+                    </div>
+                </div>
+
+                <div class="border-[2px] rounded-[2vw] p-[2vw] w-[50vw]">
+                    <div class="flex gap-[1vw]">
+                        <img src="cdn/review-thumb1.jpg" alt="" class="border-[2px]">
+                        <p class="font-[600] text-[1.2vw] mt-[2.7vw]">Maria Brosch</p>
+                    </div>
+                    <div class="">
+                        <p class="font-[400] text-[1.2vw] mt-[1vw]">“I am very pleased with Whitespark’s Google My
+                            Business service. Our Google actions have seen a 25% surge in only 2 months since starting
+                            with them. They provide wonderful customer service, returning phone calls and emails
+                            promptly and are always very helpful explaining their process and results. I definitely
+                            would recommend giving them a try.”</p>
+                    </div>
+                </div>
+
+                <div class="border-[2px] rounded-[2vw] p-[2vw] w-[50vw]">
+                    <div class="flex gap-[1vw]">
+                        <img src="cdn/review-thumb1.jpg" alt="" class="border-[2px]">
+                        <p class="font-[600] text-[1.2vw] mt-[2.7vw]">Maria Brosch</p>
+                    </div>
+                    <div class="">
+                        <p class="font-[400] text-[1.2vw] mt-[1vw]">“I am very pleased with Whitespark’s Google My
+                            Business service. Our Google actions have seen a 25% surge in only 2 months since starting
+                            with them. They provide wonderful customer service, returning phone calls and emails
+                            promptly and are always very helpful explaining their process and results. I definitely
+                            would recommend giving them a try.”</p>
+                    </div>
+                </div>
+
+                <div class="border-[2px] rounded-[2vw] p-[2vw] w-[50vw]">
+                    <div class="flex gap-[1vw]">
+                        <img src="cdn/review-thumb1.jpg" alt="" class="border-[2px]">
+                        <p class="font-[600] text-[1.2vw] mt-[2.7vw]">Maria Brosch</p>
+                    </div>
+                    <div class="">
+                        <p class="font-[400] text-[1.2vw] mt-[1vw]">“I am very pleased with Whitespark’s Google My
+                            Business service. Our Google actions have seen a 25% surge in only 2 months since starting
+                            with them. They provide wonderful customer service, returning phone calls and emails
+                            promptly and are always very helpful explaining their process and results. I definitely
+                            would recommend giving them a try.”</p>
+                    </div>
+                </div> -->
+
+            </div>
+            <i class="fas fa-circle m-[1.5vw_0_0_41vw] text-blue-700 text-[1vw]"></i>
+            <i class="fas fa-circle mt-[1vw] ml-[0.5vw] text-blue-400 text-[1vw]"></i>
+            <i class="fas fa-circle mt-[1vw] ml-[0.5vw] text-blue-400 text-[1vw]"></i>
+            <i class="fas fa-circle mt-[1vw] ml-[0.5vw] text-blue-400 text-[1vw]"></i>
+            <i class="fas fa-circle mt-[1vw] ml-[0.5vw] text-blue-400 text-[1vw]"></i>
+            <i class="fas fa-circle mt-[1vw] ml-[0.5vw] text-blue-400 text-[1vw]"></i>
+        </section>
+
+        <!-- ---------------------seven---------------------------------------- -->
+
+        <section id="seven" class="">
+            <div class=" bg-[#060532] rounded-[2vw] p-[3vw] ">
+                <div class="">
+                    <p class="text-center font-['Archivo',_sans-serif] text-[2vw] text-white "><span
+                            class="font-['Archivo',_sans-serif] bg-gradient-to-r from-[#FD015E] via-[#B92CD0] to-[#4C87FF] inline-block text-transparent bg-clip-text">Attract
+                            & win </span> clients with Whitespark</p>
+                </div>
+                <div class="">
+                    <div class="grid grid-cols-4 grid-rows-1 gap-4 mt-[3vw]">
+                        <div>
+                            <p class="text-gray-400 text-[2vw]"><i class="fas fa-chart-line"></i></p>
+                            <p class="text-white text-[1.5vw]">Rank higher</p>
+                            <p class="text-gray-400 font-[400] text-[1.1vw] mt-[1vw] ">Rank higher in Google’s local
+                                results to get found by more customers. Drive business growth with an optimized Google
+                                Business Profile and website from Whitespark’s expert team.</p>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-400 text-[2vw]"><i class="fas fa-handshake"></i></p>
+                            <p class="text-white text-[1.5vw]">Make a great first impression</p>
+                            <p class="text-gray-400 font-[400] text-[1.1vw] mt-[1vw]">People are reading your reviews to
+                                decide if they’re going to become your customer. Whitespark helps you get more reviews
+                                to increase rankings and drive new business</p>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-400 text-[2vw]"><i class="fas fa-columns"></i></p>
+                            <p class="text-white text-[1.5vw]">Optimize your website</p>
+                            <p class="text-gray-400 font-[400] text-[1.1vw] mt-[1vw]">A properly optimized website
+                                increases rankings in both organic and local results. Your dedicated account manager
+                                will develop the content you need to rank, ensure your website is optimized for Google,
+                                and also optimize for customer conversions.</p>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-400 text-[2vw]"><i class="fas fa-filter"></i></p>
+                            <p class="text-white text-[1.5vw]">Convert more leads</p>
+                            <p class="text-gray-400 font-[400] text-[1.1vw] mt-[1vw]">We help you turn searchers into
+                                customers by ensuring your Google Business Profile and website are set up to easily book
+                                an appointment, contact your team, and visit your location.</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
             </div>
         </section>
     </main>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
 </body>
 
 </html>
