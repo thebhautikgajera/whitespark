@@ -29,6 +29,19 @@
             color: black;
         }
 
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        * {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
         /* On smaller screens, decrease text size */
         @media only screen and (max-width: 300px) {
 
@@ -134,7 +147,8 @@
                                     </div>
                                 </div>
 
-                                <div class="flex gap-[1vw] text-[#ececec] mt-[1vw] hover:bg-[#ececec] rounded-[1vh] p-[0.3vw]">
+                                <div
+                                    class="flex gap-[1vw] text-[#ececec] mt-[1vw] hover:bg-[#ececec] rounded-[1vh] p-[0.3vw]">
                                     <p><img src="cdn/Local-Citation-Finder.svg" alt="" height="40px" width="40px"></p>
                                     <div class="">
                                         <p class="font-['Archivo',_sans-serif]font-[600] text-[1vw]">Local Rank Tracker
@@ -144,7 +158,8 @@
                                     </div>
                                 </div>
 
-                                <div class="flex gap-[1vw] mt-[1vw] text-[#ececec] hover:bg-[#ececec] rounded-[1vh] p-[0.3vw]">
+                                <div
+                                    class="flex gap-[1vw] mt-[1vw] text-[#ececec] hover:bg-[#ececec] rounded-[1vh] p-[0.3vw]">
                                     <p><img src="cdn/Local-Rank-Tracker_01.svg" alt="" height="40px" width="40px"></p>
                                     <div class="">
                                         <p class="font-['Archivo',_sans-serif]font-[600] text-[1vw]">Local Citation
@@ -154,7 +169,8 @@
                                     </div>
                                 </div>
 
-                                <div class="flex gap-[1vw] mt-[1vw] text-[#ececec] hover:bg-[#ececec] rounded-[1vh] p-[0.3vw]">
+                                <div
+                                    class="flex gap-[1vw] mt-[1vw] text-[#ececec] hover:bg-[#ececec] rounded-[1vh] p-[0.3vw]">
                                     <p><img src="cdn/Reputation-Builder_02.svg" alt="" height="40px" width="40px"></p>
                                     <div class="">
                                         <p class="font-['Archivo',_sans-serif] font-[600] text-[1vw]">Reputation Builder
@@ -168,7 +184,8 @@
                     </div>
 
                     <div class="dropdown relative inline-block;">
-                        <li class="text-[20px] font-['Archivo',_sans-serif] text-[#ececec] hover:text-gray-400 cursor-pointer">
+                        <li
+                            class="text-[20px] font-['Archivo',_sans-serif] text-[#ececec] hover:text-gray-400 cursor-pointer">
                             Listings &
                             SEO Services <i class="fas fa-chevron-down text-gray-400 text-[0.8vw] ml-[0.2vw]"></i></li>
                         <div
@@ -215,7 +232,8 @@
                     </div>
 
                     <div class="dropdown relative inline-block;">
-                        <li class="text-[20px] font-['Archivo',_sans-serif] text-[#ececec] hover:text-gray-400 cursor-pointer">
+                        <li
+                            class="text-[20px] font-['Archivo',_sans-serif] text-[#ececec] hover:text-gray-400 cursor-pointer">
                             Resources <i class="fas fa-chevron-down text-gray-400 text-[0.8vw] ml-[0.2vw]"></i></li>
                         <div
                             class=" dropdown-content hidden absolute bg-[#fff] w-[40vw] z-[1] px-4 py-3 rounded-[1vh] mt-[1vw] ml-[-7vw] cursor-pointer border-[2px]">
@@ -411,10 +429,10 @@
             });
 
             // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
         </script>
 
 </body>
