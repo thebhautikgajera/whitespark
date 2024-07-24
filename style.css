@@ -113,18 +113,14 @@ Fading animation .fade {
 }
 
 .carousel-bullet {
-    width: 1vw;
-    height: 1vw;
+    width: 1em;
+    height: 1em;
     border: none;
-    background-color: #dbe7ff;
+    background: #000000;
     cursor: pointer;
     border-radius: 50%;
 }
 
-.carousel-bullet:hover{
-    background-color: #b7d0ff;
-}
-
 .carousel-bullet.is-active {
-    background-color: #4c89ff;
+    background: #1c69d3;
 }
