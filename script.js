@@ -313,3 +313,18 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
+
+
+
+//logo changes
+let upArrow = document.getElementById("icon")
+
+function arrowSign() {
+  if (count == 0) {
+    count = 1;
+    upArrow.innerHTML = '<i class="ri-arrow-up-s-line"></i>';
+  } else {
+    count = 0;
+    upArrow.innerHTML = '<i class="ri-arrow-down-s-line"></i>';
+  }
+}

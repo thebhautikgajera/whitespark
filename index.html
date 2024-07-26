@@ -239,7 +239,7 @@
             <div class="cursor-pointer lg:hidden">
                 <i class="dropdownNav ri-arrow-down-s-line sm:text-[10vw] font-[400] md:text-[4vw] text-white"></i>
                 <div
-                    class="panelNav hidden absolute left-0 md:top-[9%] sm:top-[10%] w-full overflow-hidden lg:hidden h-auto w-full bg-white font-['Archivo',san-serif]">
+                    class="panelNav hidden absolute left-0 md:top-[10%] sm:top-[10%] w-full overflow-hidden lg:hidden h-auto w-full bg-white font-['Archivo',san-serif]">
                     <div class="">
                         <button
                             class="dropdownNav flex items-center w-full justify-between font-[600] sm:text-[4vw] md:text-[2.6vw] sm:p-[3vw_4vw] md:p-[2vw_3vw] my-[1vw]">
@@ -2221,13 +2221,14 @@
                             with anything) results take time.</p>
                     </div>
                 </div> -->
-                <div class="p-[1vw_4vw] md:p-[1vw_3vw] text-start">
+                <div   class="p-[1vw_4vw] md:p-[1vw_3vw] text-start">
                     <button
                         class="accordion flex items-center justify-between border w-full p-[1.5vw_2vw] rounded-[1.6vw] md:p-[0_2vw] md:rounded-[0.8vw] cursor-pointer">
                         <h1 class="text-[4vw] font-[500] text-start md:text-[2vw]">What kind of businesses do you work
                             with?
                         </h1>
-                        <i id="icon" class="ri-arrow-down-s-line text-[5vw] md:text-[4vw]"></i>
+                        <div id="icon" onclick="arrowSign()"></div>
+                        <!-- <i id="icon" class="ri-arrow-down-s-line text-[5vw] md:text-[4vw]"></i> -->
                     </button>
                     <div
                         class="panel hidden p-[1.2vw] bg-white -mt-[0.5vw] border border-t-0 rounded-b-[0.6vw] md:p-[2vw] md:-mt-[1.6vw]">
